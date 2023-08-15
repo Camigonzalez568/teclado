@@ -10,30 +10,62 @@
 
 <body>
     <div class="conteiner"></div>
-    <button class="teclas">C</button>
-    <button class="negrita1">#c</button>
-    <button class="teclas">D</button>
-    <button class="negrita2">#d</button>
-    <button class="teclas">E</button>
-    <button class="teclas">F</button>
-    <button class="negrita3">#f</button>
-    <button class="teclas">G</button>
-    <button class="negrita4">#g</button>
-    <button class="teclas">A</button>
-    <button class="negrita5">#a</button>
-    <button class="teclas">B</button>
-    <button class="teclas">C</button>
-    <button class="teclas">C</button>
-    <button class="negrita6">#c</button>
+    <button class="key" data-note="C">C</button>
+    <button class="key" data-note="#c">#c</button>
+    <button class="key" data-note="D">D</button>
+    <button class="key" data-note="#d">#d</button>
+    <button class="key" data-note="E">E</button>
+    <button class="key" data-note="F">F</button>
+    <button class="key" data-note="#f">#f</button>
+    <button class="key" data-note="G">G</button>
+    <button class="key" data-note="#g">#g</button>
+    <button class="key" data-note="A">A</button>
+    <button class="key" data-note="#a">#a</button>
+    <button class="key" data-note="B">B</button>
+    <button class="key" data-note="C">C</button>
+    <button class="key" data-note="#c">#c</button>
     </div>
 </div>
 
 <script>
-    // Agregar un evento para detectar las pulsaciones de teclas
-    document.addEventListener("keydown", (event) => {
-      const teclaPresionada = event.key;
-      console.log("Tecla presionada:", teclaPresionada);
-    });
+   const context = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(note) {
+    const oscillator = context.createOscillator();
+    oscillator.type = 'sine'; // Puedes ajustar el tipo de onda aquí
+    oscillator.frequency.setValueAtTime(noteToFrequency(note), context.currentTime);
+    oscillator.connect(context.destination);
+    oscillator.start();
+    oscillator.stop(context.currentTime + 0.5); // Ajusta la duración del sonido aquí
+}
+
+function noteToFrequency(note) {
+    const notes = {
+      'C': 261.63,
+        '#c': 277.18,
+        'D': 293.66,
+        '#d': 311.13,
+        'E': 329.63,
+        'F': 349.23,
+        '#f': 369.99,
+        'G': 392.00,
+        '#g': 415.30,
+        'A': 440.00,
+        '#a': 466.16,
+        'B': 493.88,
+    };
+    return notes[note];
+}
+
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => {
+    const note = key.getAttribute('data-note');
+    key.addEventListener('click', () => playSound(note));
+});
+</script>
+</body>
+</html>
+
   </script>
 
 </body>
