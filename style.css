@@ -1,0 +1,76 @@
+.conteiner{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%-50%);
+    display: flex;
+    justify-content: center;
+    width: 2000px;
+    height: 400px;
+}
+
+.body{
+    background-color: purple;
+}
+
+.teclas{
+    position: relative;
+    background-attachment: white;
+    height: 400px;
+    width: 100px;
+
+}
+
+.negrita1{
+    position: absolute;
+    z-index: 1;
+    left: 689px;
+    height: 110px;
+    width: 40px;
+    background-color: black;
+}
+
+.negrita2{
+    position: absolute;
+    z-index: 1;
+    left: 798px;
+    height: 110px;
+    width: 40px;
+    background-color: black;
+}
+
+.negrita3{
+    position: absolute;
+    z-index: 1;
+    left: 1188px;
+    height: 110px;
+    width: 40px;
+    background-color: black;
+}
+
+.negrita4{
+    position: absolute;
+    z-index: 1;
+    left: 1088px;
+    height: 110px;
+    width: 40px;
+    background-color: black;
+}
+
+.negrita5{
+    position: absolute;
+    z-index: 1;
+    left: 988px;
+    height: 110px;
+    width: 40px;
+    background-color: black;
+}
+
+.negrita6{
+    position: absolute;
+    z-index: 1;
+    left: 1390px;
+    height: 110px;
+    width: 40px;
+    background-color: black;
+}
