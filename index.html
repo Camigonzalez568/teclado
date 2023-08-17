@@ -9,21 +9,21 @@
 <script src="https://cdn.jsdelivr.net/npm/tone@14.8.26/Tone.js"></script>
 
 <body>
-    <div class="conteiner"></div>
-    <button class="key" data-note="C">C</button>
-    <button class="key" data-note="#c">#c</button>
-    <button class="key" data-note="D">D</button>
-    <button class="key" data-note="#d">#d</button>
-    <button class="key" data-note="E">E</button>
-    <button class="key" data-note="F">F</button>
-    <button class="key" data-note="#f">#f</button>
-    <button class="key" data-note="G">G</button>
-    <button class="key" data-note="#g">#g</button>
-    <button class="key" data-note="A">A</button>
-    <button class="key" data-note="#a">#a</button>
-    <button class="key" data-note="B">B</button>
-    <button class="key" data-note="C">C</button>
-    <button class="key" data-note="#c">#c</button>
+    <div class="key-conteiner"></div>
+    <button class="key white-key" data-note="C">C</button>
+    <button class="key black-key" data-note="#c">#c</button>
+    <button class="key  white-key" data-note="D">D</button>
+    <button class="key black-key" data-note="#d">#d</button>
+    <button class="key white-key" data-note="E">E</button>
+    <button class="key white-key" data-note="F">F</button>
+    <button class="key black-key" data-note="#f">#f</button>
+    <button class="key white-key" data-note="G">G</button>
+    <button class="key black-key" data-note="#g">#g</button>
+    <button class="key white-key" data-note="A">A</button>
+    <button class="key black-key" data-note="#a">#a</button>
+    <button class="key white-key" data-note="B">B</button>
+    <button class="key white-key" data-note="C">C</button>
+    <button class="key black-key" data-note="#c1">#c</button>
     </div>
 </div>
 
@@ -53,6 +53,7 @@ function noteToFrequency(note) {
         'A': 440.00,
         '#a': 466.16,
         'B': 493.88,
+        '#c1': 277.18,
     };
     return notes[note];
 }
@@ -66,7 +67,7 @@ keys.forEach(key => {
 </body>
 </html>
 
-  </script>
+    </script>
 
 </body>
 </html>
