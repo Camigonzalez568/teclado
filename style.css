@@ -8,6 +8,10 @@
     left: 50%; 
 }
 
+#piano{
+    display: flex;
+    justify-content: center;
+}
 body {
     text-align: center;
     background-color: aquamarine;
@@ -30,10 +34,27 @@ body {
     left: 37%;
 }
 
+.form-select{
+    background-color: white;
+    position: absolute;
+    top: 15%;
+    right: 79%;
+    width: 100px;
+    height: 8%;
+}
+.play{
+    background-color: white;
+    position: absolute;
+    top: 15% ;
+    right: 73%;
+    width: 50px;
+    height: 8%;
+}
 .key[data-note^="#b"]{
     position: absolute;
     z-index : 1;
     background-color: black;
+
     width: 40px;
     height: 150px;
     left: 468%;
@@ -79,5 +100,28 @@ body {
     height: 150px;
     left: 64%;
 }
+body {
+    text-align: center;
+    background-color: aquamarine;
+}
 
+.key {
+    position: relative;
+    background-color: white;
+    width: 50px;
+    height: 400px;
+    margin-left: 0;
+}
+
+.key[data-note^="#"] {
+    position: absolute;
+    z-index : 1;
+    background-color: black;
+    width: 40px;
+    height: 150px;
+}
+
+.major-note {
+    background-color: lightblue;
+}
 
