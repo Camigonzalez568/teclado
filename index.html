@@ -10,38 +10,45 @@
 
 <body>
     <div class="key-conteiner"></div>
-    <button class="key white-key" data-note="C">C</button>
-    <button class="key black-key" data-note="#c">#c</button>
-    <button class="key  white-key" data-note="D">D</button>
-    <button class="key black-key" data-note="#d">#d</button>
-    <button class="key white-key" data-note="E">E</button>
-    <button class="key white-key" data-note="F">F</button>
-    <button class="key black-key" data-note="#f">#f</button>
-    <button class="key white-key" data-note="G">G</button>
-    <button class="key black-key" data-note="#g">#g</button>
-    <button class="key white-key" data-note="A">A</button>
-    <button class="key black-key" data-note="#a">#a</button>
-    <button class="key white-key" data-note="B">B</button>
-    <button class="key white-key" data-note="C">C</button>
-    <button class="key black-key" data-note="#c1">#c</button>
+    <button class="play">PLAY</button>
+    <select id="scaleSelector">
+        <option value="major">Nota Mayor</option>
+        <option value="minor">Nota Menor</option>
+    </select>
+    <div id="#piano">
+        <button class="key white-key" data-note="C">C</button>
+        <button class="key  white-key" data-note="D">D</button>
+        <button class="key white-key" data-note="E">E</button>
+        <button class="key white-key" data-note="F">F</button>
+        <button class="key white-key" data-note="G">G</button>
+        <button class="key white-key" data-note="A">A</button>
+        <button class="key white-key" data-note="B">B</button>
+        <button class="key white-key" data-note="C">C</button>
+
+        <button class="key black-key" data-note="#c">#c</button>
+        <button class="key black-key" data-note="#d">#d</button>
+        <button class="key black-key" data-note="#f">#f</button>
+        <button class="key black-key" data-note="#g">#g</button>
+        <button class="key black-key" data-note="#a">#a</button>
+        <button class="key black-key" data-note="#c">#c</button>
+        
     </div>
-</div>
 
 <script>
-   const context = new (window.AudioContext || window.webkitAudioContext)();
+    const context = new (window.AudioContext || window.webkitAudioContext)();
 
 function playSound(note) {
     const oscillator = context.createOscillator();
-    oscillator.type = 'sine'; // Puedes ajustar el tipo de onda aquí
+    oscillator.type = 'sine'; 
     oscillator.frequency.setValueAtTime(noteToFrequency(note), context.currentTime);
     oscillator.connect(context.destination);
     oscillator.start();
-    oscillator.stop(context.currentTime + 0.5); // Ajusta la duración del sonido aquí
+    oscillator.stop(context.currentTime + 0.5); 
 }
 
 function noteToFrequency(note) {
     const notes = {
-      'C': 261.63,
+        'C': 261.63,
         '#c': 277.18,
         'D': 293.66,
         '#d': 311.13,
