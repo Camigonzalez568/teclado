@@ -54,7 +54,6 @@ body {
     position: absolute;
     z-index : 1;
     background-color: black;
-
     width: 40px;
     height: 150px;
     left: 468%;
@@ -113,15 +112,5 @@ body {
     margin-left: 0;
 }
 
-.key[data-note^="#"] {
-    position: absolute;
-    z-index : 1;
-    background-color: black;
-    width: 40px;
-    height: 150px;
-}
 
-.major-note {
-    background-color: lightblue;
-}
 
